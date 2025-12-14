@@ -2,7 +2,7 @@
   {
     "name": "Dandy Kitchen",
     "theme": "restaurant",
-    "address": "Paris 1er",
+    "address": "Paris 1er, 86 rue Saint-Denis",
     "lat": 48.86240,
     "lng": 2.349496,
     "note": "Bouillon dans un hôtel 4 étoiles, abordable",
@@ -11,7 +11,7 @@
   {
   "name": "Bacha Coffee",
   "theme": "cafe",
-  "address": "Paris 8e",
+  "address": "Paris 8e, 26 Avenue des Champs-Elysées",
   "lat": 48.86973880914639,
   "lng": 2.3087384510286046,
   "note": "Café marocain superbe",
@@ -20,7 +20,7 @@
   {
   "name": "Marché d'Aligre",
   "theme": "monument_lieu",
-  "address": "Paris 12e",
+  "address": "Paris 12e, Place d'Aligre",
   "lat": 48.8488998788594,
   "lng": 2.378199463189093,
   "note": "Un des plus vieux marchés de Paris, antiquités et ambiance populaire",
