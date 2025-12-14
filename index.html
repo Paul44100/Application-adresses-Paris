@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ma carte Paris</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
   <style>
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto; }
     #topbar { padding:12px; display:flex; gap:10px; align-items:center; }
@@ -12,22 +14,35 @@
     select { padding:8px; }
   </style>
 </head>
+
 <body>
   <div id="topbar">
     <strong>Mes spots</strong>
+
     <select id="themeFilter">
-  <option value="all">Tout</option>
-  <option value="cafe">Café / Bar</option>
-  <option value="restaurant">Restaurants</option>
-  <option value="musee">Musées</option>
-  <option value="monument_lieu">Monument / Lieu</option>
-  <option value="magasin">Magasins</option>
-</select>
+      <option value="all">Tout</option>
+      <option value="cafe">Café / Bar</option>
+      <option value="restaurant">Restaurants</option>
+      <option value="musee">Musées</option>
+      <option value="monument_lieu">Monument / Lieu</option>
+      <option value="magasin">Magasins</option>
+    </select>
   </div>
 
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Fix icônes Leaflet (sinon parfois pas d’icône sur GitHub Pages) -->
+  <script>
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+      iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+      shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+    });
+  </script>
+
   <script src="app.js"></script>
 </body>
 </html>
