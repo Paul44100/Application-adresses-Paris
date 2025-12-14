@@ -1,6 +1,6 @@
 [
   {
-    "name": "Bouillon – Dandy Kitchen",
+    "name": "Dandy Kitchen",
     "theme": "restaurant",
     "address": "Paris 1er",
     "lat": 48.86240,
@@ -8,4 +8,14 @@
     "note": "Bouillon dans un hôtel 4 étoiles, abordable",
     "link": "https://www.instagram.com/reel/DRfDgTljHvS/?igsh=OGxrc3pkejZoMzRo"
   }
+
+  {
+  "name": "Bacha Coffee",
+  "theme": "cafe",
+  "address": "Paris 8e",
+  "lat": 48.86973880914639,
+  "lng": 2.3087384510286046,
+  "note": "Café marocain superbe",
+  "link": "https://www.instagram.com/reel/DSFyEpRDEGz/?igsh=MWJ4MmFrZzZzbmxyZA=="
+}
 ]
