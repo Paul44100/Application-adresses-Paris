@@ -16,5 +16,14 @@
   "lng": 2.3087384510286046,
   "note": "Café marocain superbe",
   "link": "https://www.instagram.com/reel/DSFyEpRDEGz/?igsh=MWJ4MmFrZzZzbmxyZA=="
+},
+  {
+  "name": "Marché d'Aligre",
+  "theme": "monument_lieu",
+  "address": "Paris 12e",
+  "lat": 48.8488998788594,
+  "lng": 2.378199463189093,
+  "note": "Un des plus vieux marchés de Paris, antiquités et ambiance populaire",
+  "link": "https://www.instagram.com/reel/DSKDIetDFfn/?igsh=ZXNvd2ZzM2k3bzA1"
 }
 ]
