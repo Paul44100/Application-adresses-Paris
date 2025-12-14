@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Exemple - Café",
+    "theme": "cafe",
+    "address": "Paris",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "note": "Mon premier spot",
+    "link": "https://instagram.com/"
+  }
+]
