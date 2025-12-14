@@ -1,12 +1,11 @@
 [
-{
-  "name": "Bouillon – Dandy Kitchen",
-  "theme": "restaurant",
-  "address": "Paris",
-  "lat": 48.86240,
-  "lng": 2.349496,
-  "note": "Bouillon dans un hôtel, repéré près de Dandy Kitchen",
-  "link": ""
-}
+  {
+    "name": "Bouillon – Dandy Kitchen",
+    "theme": "restaurant",
+    "address": "Paris",
+    "lat": 48.86240,
+    "lng": 2.349496,
+    "note": "Bouillon dans un hôtel 4 étoiles, abordable",
+    "link": "https://www.instagram.com/reel/DRfDgTljHvS/?igsh=OGxrc3pkejZoMzRo"
+  }
 ]
-
