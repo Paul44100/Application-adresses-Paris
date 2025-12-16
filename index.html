@@ -8,10 +8,39 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto; }
-    #topbar { padding:12px; display:flex; gap:10px; align-items:center; }
-    #map { height: calc(100vh - 56px); }
-    select { padding:8px; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto; }
+
+    /* Barre du haut, pensée mobile */
+    #topbar {
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    #topbar strong {
+      margin-right: 8px;
+    }
+
+    .control {
+      padding: 10px 12px;           /* + grand pour mobile */
+      font-size: 16px;               /* évite le zoom iOS */
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+    }
+
+    #searchInput {
+      flex: 1 1 180px;               /* prend de la place */
+      min-width: 180px;
+    }
+
+    #map { height: calc(100vh - 110px); } /* un peu plus haut car topbar plus grande */
+
+    @media (min-width: 700px) {
+      #map { height: calc(100vh - 64px); }
+    }
   </style>
 </head>
 
@@ -19,7 +48,7 @@
   <div id="topbar">
     <strong>Mes spots</strong>
 
-    <select id="themeFilter">
+    <select id="themeFilter" class="control">
       <option value="all">Tout</option>
       <option value="cafe">Café / Bar</option>
       <option value="restaurant">Restaurants</option>
@@ -27,13 +56,31 @@
       <option value="monument_lieu">Monument / Lieu</option>
       <option value="magasin">Magasins</option>
     </select>
+
+    <input id="searchInput" class="control" type="search" placeholder="Rechercher (nom, adresse, note, tag…)" />
+
+    <select id="tagFilter" class="control">
+      <option value="all">Tous les tags</option>
+      <!-- rempli automatiquement -->
+    </select>
+
+    <select id="radiusSelect" class="control" title="Rayon autour de moi">
+      <option value="0">Rayon: —</option>
+      <option value="0.5">Rayon: 0,5 km</option>
+      <option value="1">Rayon: 1 km</option>
+      <option value="2">Rayon: 2 km</option>
+      <option value="5">Rayon: 5 km</option>
+    </select>
+
+    <button id="nearMeBtn" class="control">Autour de moi</button>
+    <button id="clearNearMeBtn" class="control" style="display:none;">Réinitialiser</button>
   </div>
 
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Fix icônes Leaflet (sinon parfois pas d’icône sur GitHub Pages) -->
+  <!-- Fix icônes Leaflet -->
   <script>
     delete L.Icon.Default.prototype._getIconUrl;
     L.Icon.Default.mergeOptions({
@@ -46,3 +93,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
