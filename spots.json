@@ -6,6 +6,7 @@
     "lat": 48.86240,
     "lng": 2.349496,
     "note": "Bouillon dans un hôtel 4 étoiles, abordable",
+    "tags": [""],
     "link": "https://www.instagram.com/reel/DRfDgTljHvS/?igsh=OGxrc3pkejZoMzRo"
   },
   {
@@ -15,6 +16,7 @@
   "lat": 48.86973880914639,
   "lng": 2.3087384510286046,
   "note": "Café marocain superbe",
+  "tags": [""],
   "link": "https://www.instagram.com/reel/DSFyEpRDEGz/?igsh=MWJ4MmFrZzZzbmxyZA=="
 },
   {
@@ -24,6 +26,7 @@
   "lat": 48.8488998788594,
   "lng": 2.378199463189093,
   "note": "Un des plus vieux marchés de Paris, antiquités et ambiance populaire",
+  "tags": ["marché"],
   "link": "https://www.instagram.com/reel/DSKDIetDFfn/?igsh=ZXNvd2ZzM2k3bzA1"
 },
   {
@@ -33,6 +36,7 @@
   "lat": 48.86298247288874,
   "lng": 2.3356739598615506,
   "note": "Café pour chocolats chauds - 9€",
+  "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 },
   {
@@ -42,6 +46,7 @@
   "lat": 48.88990457782039,
   "lng": 2.382125979085297,
   "note": "Péniche café, chocolats chauds au bord de l’eau - 5€",
+  "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 },
 {
@@ -51,6 +56,7 @@
   "lat": 48.85533272130393,
   "lng": 2.3720788585070087,
   "note": "Café d’Alain Ducasse, chocolats chauds de qualité - 12€",
+  "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 },
 {
@@ -60,6 +66,7 @@
   "lat": 48.884185220296004,
   "lng": 2.3394036117444923,
   "note": "Chocolats chauds et spécialités chocolatées - 8€",
+  "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 },
 {
@@ -69,6 +76,7 @@
   "lat": 48.91317001215433,
   "lng": 2.328309612348051,
   "note": "Café cosy, réputé pour ses chocolats chauds - 8€",
+  "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 }
 ]
