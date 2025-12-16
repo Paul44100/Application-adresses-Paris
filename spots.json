@@ -42,7 +42,7 @@
   {
   "name": "Péniche L'Eau et les Rêves",
   "theme": "cafe",
-  "address": "9 Quai de l'Oise, 75019 Paris",
+  "address": "Paris 19e, 9 Quai de l'Oise",
   "lat": 48.88990457782039,
   "lng": 2.382125979085297,
   "note": "Péniche café, chocolats chauds au bord de l’eau - 5€",
@@ -52,7 +52,7 @@
 {
   "name": "La Manufacture de Café Alain Ducasse",
   "theme": "cafe",
-  "address": "12 Rue Saint-Sabin, 75011 Paris",
+  "address": "Paris 11e, 12 Rue Saint-Sabin",
   "lat": 48.85533272130393,
   "lng": 2.3720788585070087,
   "note": "Café d’Alain Ducasse, chocolats chauds de qualité - 12€",
@@ -62,7 +62,7 @@
 {
   "name": "Dengo",
   "theme": "cafe",
-  "address": "19 Rue Yvonne le Tac, 75018 Paris",
+  "address": "Paris 18e, 19 Rue Yvonne le Tac",
   "lat": 48.884185220296004,
   "lng": 2.3394036117444923,
   "note": "Café et Chocolats chauds et spécialités chocolatées - 8€",
@@ -72,11 +72,38 @@
 {
   "name": "Bloom Café",
   "theme": "cafe",
-  "address": "9 Allée de la Comtesse du Cayla, 93400 Saint-Ouen-sur-Seine",
+  "address": "93400 Saint-Ouen-sur-Seine, 9 Allée de la Comtesse du Cayla",
   "lat": 48.91317001215433,
   "lng": 2.328309612348051,
   "note": "Café cosy, réputé pour ses chocolats chauds - 8€",
   "tags": ["chocolat chaud"],
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
+},
+  {
+  "name": "Fragonard – Opéra",
+  "theme": "magasin",
+  "address": "Paris 9e, 5 Rue Boudreau",
+  "lat": 48.87209518356369,
+  "lng": 2.329201359780759,
+  "note": "Cadeaux de Noël (parfums, souvenirs)",
+  "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
+},
+{
+  "name": "Merci – Bastille",
+  "theme": "magasin",
+  "address": "Paris 3e, 111 Bd Beaumarchais",
+  "lat": 48.86072193435604,
+  "lng": 2.3668506930529807,
+  "note": "Idées cadeaux (concept store, déco)",
+  "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
+},
+{
+  "name": "Marin Montagut – Saint-Sulpice",
+  "theme": "magasin",
+  "address": "Paris 6e, 48 Rue Madame",
+  "lat": 48.84815928743801,
+  "lng": 2.3315659229962518,
+  "note": "Idées cadeaux (artisanat, objets)",
+  "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
 }
 ]
