@@ -32,7 +32,43 @@
   "address": "Paris 1er, 1 Place André Malraux",
   "lat": 48.86298247288874,
   "lng": 2.3356739598615506,
-  "note": "Café pour chocolats chauds",
+  "note": "Café pour chocolats chauds - 9€",
+  "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
+},
+  {
+  "name": "Péniche L'Eau et les Rêves",
+  "theme": "cafe",
+  "address": "9 Quai de l'Oise, 75019 Paris",
+  "lat": 48.88990457782039,
+  "lng": 2.382125979085297,
+  "note": "Péniche café, chocolats chauds au bord de l’eau - 5€",
+  "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
+},
+{
+  "name": "La Manufacture de Café Alain Ducasse",
+  "theme": "cafe",
+  "address": "12 Rue Saint-Sabin, 75011 Paris",
+  "lat": 48.85533272130393,
+  "lng": 2.3720788585070087,
+  "note": "Café d’Alain Ducasse, chocolats chauds de qualité - 12€",
+  "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
+},
+{
+  "name": "Dengo",
+  "theme": "cafe",
+  "address": "19 Rue Yvonne le Tac, 75018 Paris",
+  "lat": 48.884185220296004,
+  "lng": 2.3394036117444923,
+  "note": "Chocolats chauds et spécialités chocolatées - 8€",
+  "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
+},
+{
+  "name": "Bloom Café",
+  "theme": "cafe",
+  "address": "9 Allée de la Comtesse du Cayla, 93400 Saint-Ouen-sur-Seine",
+  "lat": 48.91317001215433,
+  "lng": 2.328309612348051,
+  "note": "Café cosy, réputé pour ses chocolats chauds - 8€",
   "link": "https://www.instagram.com/reel/DSIaOzXDX7q/?igsh=MWY0bGh2cmthNXl3NA=="
 }
 ]
