@@ -86,6 +86,7 @@
   "lat": 48.87209518356369,
   "lng": 2.329201359780759,
   "note": "Cadeaux de Noël (parfums, souvenirs)",
+  "tags": ["cadeaux"],
   "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
 },
 {
@@ -95,6 +96,7 @@
   "lat": 48.86072193435604,
   "lng": 2.3668506930529807,
   "note": "Idées cadeaux (concept store, déco)",
+  "tags": ["cadeaux"],
   "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
 },
 {
@@ -104,6 +106,7 @@
   "lat": 48.84815928743801,
   "lng": 2.3315659229962518,
   "note": "Idées cadeaux (artisanat, objets)",
+  "tags": ["cadeaux"],
   "link": "https://www.instagram.com/reel/DSAnkFPjZXP/?igsh=NzIxeXA4bms4Nmgy"
 }
 ]
