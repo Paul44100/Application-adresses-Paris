@@ -2,78 +2,207 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
   <title>Ma carte Paris</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto; }
+    :root{
+      --pad: 10px;
+      --radius: 12px;
+      --border: 1px solid #e6e6e6;
+    }
 
-    /* Barre du haut, pensée mobile */
-    #topbar {
-      padding: 10px;
-      display: flex;
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto;
+      background:#fff;
+    }
+
+    /* --- Topbar --- */
+    #topbar{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      padding: var(--pad);
+      border-bottom: var(--border);
+    }
+
+    .toprow{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .brand{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .control{
+      padding: 10px 12px;
+      font-size: 16px; /* évite le zoom iOS */
+      border: var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .btn{
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      border: var(--border);
+      background:#f7f7f7;
+    }
+
+    .btn-blue{
+      border: 1px solid #cfe3ff;
+      background:#eef5ff;
+      color:#0b5bd3;
+      font-weight:600;
+    }
+
+    .spacer{ flex:1; }
+
+    /* Zone filtres */
+    .filters{
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* Ligne d’actions (autour de moi etc.) */
+    .actions{
+      margin-top: 10px;
+      display:flex;
+      gap:10px;
       flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
+    }
+    .actions .control{
+      width: auto;
+      flex: 1 1 160px;
     }
 
-    #topbar strong {
-      margin-right: 8px;
+    /* Map */
+    #map{
+      height: calc(100vh - 120px);
     }
 
-    .control {
-      padding: 10px 12px;           /* + grand pour mobile */
-      font-size: 16px;               /* évite le zoom iOS */
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: white;
+    /* --- Desktop layout --- */
+    @media (min-width: 900px){
+      #topbar{
+        position: relative;
+      }
+
+      .toprow{
+        gap: 12px;
+      }
+
+      .filters{
+        margin-top: 10px;
+        grid-template-columns: 220px 1fr 220px 220px;
+        align-items:center;
+      }
+
+      .actions{
+        margin-top: 10px;
+        justify-content:flex-start;
+      }
+
+      #map{
+        height: calc(100vh - 140px);
+      }
     }
 
-    #searchInput {
-      flex: 1 1 180px;               /* prend de la place */
-      min-width: 180px;
+    /* --- Mobile: compacte + safe area iPhone --- */
+    @media (max-width: 899px){
+      #topbar{
+        padding: calc(var(--pad) + env(safe-area-inset-top)) var(--pad) var(--pad) var(--pad);
+      }
+
+      .filters{
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* si petit écran: 1 colonne */
+      @media (max-width: 380px){
+        .filters{
+          grid-template-columns: 1fr;
+        }
+      }
+
+      #map{
+        height: calc(100vh - 170px);
+      }
     }
 
-    #map { height: calc(100vh - 110px); } /* un peu plus haut car topbar plus grande */
+    /* --- Mode "filtres cachés" sur mobile --- */
+    .filters-collapsed .filters,
+    .filters-collapsed .actions{
+      display: none;
+    }
 
-    @media (min-width: 700px) {
-      #map { height: calc(100vh - 64px); }
+    /* --- Légende Leaflet: un peu plus compacte sur mobile --- */
+    @media (max-width: 899px){
+      .leaflet-control{
+        margin: 10px !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div id="topbar">
-    <strong>Mes spots</strong>
+  <div id="topbar" class="filters-collapsed">
+    <div class="toprow">
+      <div class="brand">Mes spots</div>
 
-    <select id="themeFilter" class="control">
-      <option value="all">Tout</option>
-      <option value="cafe">Café / Bar</option>
-      <option value="restaurant">Restaurants</option>
-      <option value="musee">Musées</option>
-      <option value="monument_lieu">Monument / Lieu</option>
-      <option value="magasin">Magasins</option>
-    </select>
+      <div class="spacer"></div>
 
-    <input id="searchInput" class="control" type="search" placeholder="Rechercher (nom, adresse, note, tag…)" />
+      <!-- Bouton mobile pour afficher/masquer les filtres -->
+      <button id="toggleFiltersBtn" class="control btn btn-primary" style="max-width:160px;">
+        Filtres ▾
+      </button>
+    </div>
 
-    <select id="tagFilter" class="control">
-      <option value="all">Tous les tags</option>
-      <!-- rempli automatiquement -->
-    </select>
+    <div class="filters">
+      <select id="themeFilter" class="control">
+        <option value="all">Tout</option>
+        <option value="cafe">Café / Bar</option>
+        <option value="restaurant">Restaurants</option>
+        <option value="musee">Musées</option>
+        <option value="monument_lieu">Monument / Lieu</option>
+        <option value="magasin">Magasins</option>
+      </select>
 
-    <select id="radiusSelect" class="control" title="Rayon autour de moi">
-      <option value="0">Rayon: —</option>
-      <option value="0.5">Rayon: 0,5 km</option>
-      <option value="1">Rayon: 1 km</option>
-      <option value="2">Rayon: 2 km</option>
-      <option value="5">Rayon: 5 km</option>
-    </select>
+      <select id="tagFilter" class="control">
+        <option value="all">Tous les tags</option>
+      </select>
 
-    <button id="nearMeBtn" class="control">Autour de moi</button>
-    <button id="clearNearMeBtn" class="control" style="display:none;">Réinitialiser</button>
+      <input id="searchInput" class="control" type="search" placeholder="Rechercher (nom, adresse, note, tag…)" />
+
+      <select id="radiusSelect" class="control" title="Rayon autour de moi">
+        <option value="0">Rayon: —</option>
+        <option value="0.5">Rayon: 0,5 km</option>
+        <option value="1">Rayon: 1 km</option>
+        <option value="2">Rayon: 2 km</option>
+        <option value="5">Rayon: 5 km</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button id="nearMeBtn" class="control btn btn-blue">Autour de moi</button>
+      <button id="clearNearMeBtn" class="control btn btn-primary" style="display:none;">Réinitialiser</button>
+    </div>
   </div>
 
   <div id="map"></div>
@@ -88,6 +217,39 @@
       iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
       shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
     });
+
+    // Toggle filtres (mobile)
+    const topbar = document.getElementById("topbar");
+    const btn = document.getElementById("toggleFiltersBtn");
+
+    function setBtnLabel() {
+      const collapsed = topbar.classList.contains("filters-collapsed");
+      btn.textContent = collapsed ? "Filtres ▾" : "Filtres ▴";
+    }
+
+    btn.addEventListener("click", () => {
+      topbar.classList.toggle("filters-collapsed");
+      setBtnLabel();
+    });
+
+    // Sur desktop: toujours afficher les filtres
+    function syncDesktop() {
+      if (window.matchMedia("(min-width: 900px)").matches) {
+        topbar.classList.remove("filters-collapsed");
+      } else {
+        // sur mobile, on garde l’état (par défaut: collapsed)
+        if (!topbar.dataset.userToggled) {
+          topbar.classList.add("filters-collapsed");
+        }
+      }
+      setBtnLabel();
+    }
+
+    // marque le fait que l’utilisateur a cliqué une fois
+    btn.addEventListener("click", () => { topbar.dataset.userToggled = "1"; });
+
+    window.addEventListener("resize", syncDesktop);
+    syncDesktop();
   </script>
 
   <script src="app.js"></script>
